@@ -4,12 +4,11 @@
 This is the controller when launching the app.
 All functions that will load upon launching is directed from here!
  */
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 public class GameController {
 
 
-    private GameUI view;
+    private InventoryUI view;
 
     //--------the rooms and inventory and current index of the room---------
 
@@ -22,7 +21,7 @@ public class GameController {
         createTestData(); // make fake rooms for now.
 
         // the view will be created and changed from this controller
-        view = new GameUI();
+        view = new InventoryUI();
         view.setVisible(true);
 
         updateView();
