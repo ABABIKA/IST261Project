@@ -1,9 +1,11 @@
-// Game UI by Cody
+
+// Game UI by Cody - Edited by Hafsah
 
 import javax.swing.*;
 import java.util.ArrayList;
 
 public class GameUI extends JFrame {
+
     private JTextField ItemName;
     private JTextField ItemDescription;
     private JTextField IsCollectible;
@@ -17,7 +19,9 @@ public class GameUI extends JFrame {
     private void createUIComponents() {
         // TODO: place custom component creation code here
     }
+
     // Added By Hafsah - methods for the controller
+    
     public void setRoomData(Room room) {
         System.out.println("setRoomData called for " + room.getName());
     }
