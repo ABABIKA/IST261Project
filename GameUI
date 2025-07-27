@@ -1,3 +1,6 @@
+// Game UI by Cody - Edited by Hafsah
+
+import java.util.ArrayList;
 import javax.swing.*;
 
 public class GameUI {
@@ -14,4 +17,19 @@ public class GameUI {
     private void createUIComponents() {
         // TODO: place custom component creation code here
     }
+// Added By Hafsah - methods for the controller
+    public void setRoomData(Room room) {
+        System.out.println("setRoomData called for " + room.getName());
+    }
+
+    public void setInventoryDropdown(ArrayList<Item> items) {
+        System.out.println("setInventoryDropdown called, size: " + items.size());
+    }
+    public void showMessage(String message) {
+        JOptionPane.showMessageDialog(this, message);
+    }
+    public String promptUser(String message) {
+        return JOptionPane.showInputDialog(this, message);
+    }
+}
 }
