@@ -13,5 +13,44 @@ public class ItemUI {
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
+
+    public Item() {//jframe setup-cody
+        setTitle("Item Detail");
+        setSize(400,400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
+
+        JPanel fieldsPanel = new JPanel(new GridLayout(4, 2));//fields main panel -cody
+        fieldsPanel.add(new JLabel("NamE:"));
+        itemName = new JTextField();
+        fieldsPanel.add(itemName);
+
+        fieldsPanel.add(new JLabel("Description:"));
+        itemDescription = new JTextField();
+        fieldsPanel.add(isCollectible);
+
+        fieldsPanel.add(new JLabel("Collectible (true/false):"));
+        isCollectible = new JTextField();
+        fieldsPanel.add(issCollectible);
+
+        add(fieldsPanel, BorderLayout.CENTER);
+
+        JPanel buttonsPanel = new JPanel(new GridLayou(2, 6));
+        btnNext = new JButton("Next");
+        btnPrevious = new JButton ("Previous");
+        btnUpdate = new JButton (""Update");
+        btnDelete = new JButton ("Delete");
+        btnAdd = new JButton ("Add");
+        btnQuit = new JButton ("Quit);
+        buttonsPanel.add(btnNext);
+        buttonsPanel.add(btnPrevious);
+        buttonsPanel.add(btnUpdate);
+        buttonsPanel.add(btnDelet);
+        buttonsPanel.add(btnAdd);
+        buttonsPanel.add(btnQuit);
+
+        add(buttonsPanel, BorderLayout.SOUTH);
+    }
+    
     }
 }
