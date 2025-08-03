@@ -1,7 +1,0 @@
-Collection Used: HashSet
-
-Rationale:
-In our game project, a HashSet is used to track which puzzles or rooms a player has completed or visited. HashSet makes it easy to check if a task has already been done, and it prevents duplicates automatically. This keeps performance fast and logic clean.
-
-Class using the collection: ProgressManager
-Author: Aeden Vogt
