@@ -1,7 +1,7 @@
-Collection Used: HashMap
+Collection Used: HashSet
 
 Rationale:
-In our game project, a HashMap is used to manage the player's inventory. It allows fast lookups, additions, and deletions using item names as keys. This makes managing a growing inventory efficient, especially when needing to quickly retrieve or update specific items.
+In our game project, a HashSet is used to track which puzzles or rooms a player has completed or visited. HashSet makes it easy to check if a task has already been done, and it prevents duplicates automatically. This keeps performance fast and logic clean.
 
-Class using the collection: InventoryManager
+Class using the collection: ProgressManager
 Author: Aeden Vogt

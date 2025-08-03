@@ -1,13 +1,10 @@
-package gameinventorymanager;
-
 // Author: Aeden Vogt
+package gameprogresstracker;
 
-//This is where the program starts. It launches the controller.
+//Launch the controller to start the app
 public class Main {
     public static void main(String[] args) {
-        InventoryController controller = new InventoryController();
+        ProgressController controller = new ProgressController();
         controller.run();
     }
 }
-
-
