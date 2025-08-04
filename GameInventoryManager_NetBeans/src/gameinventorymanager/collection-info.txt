@@ -1,0 +1,7 @@
+Collection Used: HashMap
+
+Rationale:
+In our game project, a HashMap is used to manage the player's inventory. It allows fast lookups, additions, and deletions using item names as keys. This makes managing a growing inventory efficient, especially when needing to quickly retrieve or update specific items.
+
+Class using the collection: InventoryManager
+Author: Aeden Vogt

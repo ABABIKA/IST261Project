@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GameProgressTracker" default="compile">
+    <target name="compile">
+        <mkdir dir="build"/>
+        <javac srcdir="src" destdir="build"/>
+    </target>
+</project>
