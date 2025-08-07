@@ -12,6 +12,7 @@ public class GameView extends JFrame {
     private JTextArea desc;
     private JTextField ID;
     private JTextField input;
+    private JLabel roomImageLabel;
 
     private JButton backBtn;
     private JButton nextBtn;
@@ -108,6 +109,16 @@ public class GameView extends JFrame {
         searchRoomBtn = new JButton("Search Room");
         add(searchRoomBtn, gbc);
 
+        // Room image label
+        gbc.gridx = 2;
+        gbc.gridy = 0;
+        gbc.gridheight = 4; // spans room info rows
+        roomImageLabel = new JLabel();
+        roomImageLabel.setPreferredSize(new Dimension(150, 120)); // you can adjust size
+        roomImageLabel.setBorder(BorderFactory.createLineBorder(Color.GRAY)); // optional border
+        add(roomImageLabel, gbc);
+        gbc.gridheight = 1; // reset grid height
+
         setVisible(true);
 
         // Button Actions
@@ -149,9 +160,30 @@ public class GameView extends JFrame {
         roomName.setText(room.getName());
         desc.setText(room.getDescription());
         ID.setText(String.valueOf(room.getId()));
+
+        // Try to load an image for this room
+        String imagePath = "/assets/room" + room.getId() + ".jpg";
+        updateRoomImage(imagePath);
     }
 
     public String getInputAnswer() {
         return input.getText().trim();
+    }
+
+    public void updateRoomImage(String imagePath) {
+        try {
+            java.net.URL imgURL = getClass().getResource(imagePath);
+            if (imgURL != null) {
+                ImageIcon icon = new ImageIcon(imgURL);
+                Image scaled = icon.getImage().getScaledInstance(150, 120, Image.SCALE_SMOOTH);
+                roomImageLabel.setIcon(new ImageIcon(scaled));
+            } else {
+                System.out.println("Image not found: " + imagePath);
+                roomImageLabel.setIcon(null);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            roomImageLabel.setIcon(null);
+        }
     }
 }
