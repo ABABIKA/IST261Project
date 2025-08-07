@@ -58,6 +58,7 @@ public class RoomBuilderModel {
         room4.setPuzzle(puzzle4);
         rooms.add(room4);
 
+
 // Room 5 - Basement
         RoomModel room5 = new RoomModel("Basement", "A cold, damp basement with flickering lights and distant echoes.", 5);
         ItemModel reward5 = new ItemModel("Worn Tape", "An old cassette tape labeled 'Do Not Listen'.", true);
@@ -113,10 +114,6 @@ public class RoomBuilderModel {
         room10.setPuzzle(puzzle10);
         rooms.add(room10);
 
-
-
         return rooms;
-
-
     }
 }

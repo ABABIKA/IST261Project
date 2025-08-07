@@ -108,7 +108,7 @@ public class GameView extends JFrame {
         gbc.gridx = 2;
         searchRoomBtn = new JButton("Search Room");
         add(searchRoomBtn, gbc);
-
+      
         // Room image label
         gbc.gridx = 2;
         gbc.gridy = 0;
@@ -118,6 +118,7 @@ public class GameView extends JFrame {
         roomImageLabel.setBorder(BorderFactory.createLineBorder(Color.GRAY)); // optional border
         add(roomImageLabel, gbc);
         gbc.gridheight = 1; // reset grid height
+
 
         setVisible(true);
 
@@ -161,9 +162,11 @@ public class GameView extends JFrame {
         desc.setText(room.getDescription());
         ID.setText(String.valueOf(room.getId()));
 
+
         // Try to load an image for this room
         String imagePath = "/assets/room" + room.getId() + ".jpg";
         updateRoomImage(imagePath);
+
     }
 
     public String getInputAnswer() {

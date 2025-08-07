@@ -107,6 +107,7 @@ public class GameController {
         }
 
         updateInventoryView();
+
     }
 
     // Default version stays the same
@@ -132,6 +133,7 @@ public class GameController {
             if (inventoryUI != null)
                 inventoryUI.showMessage("That item isn't in your inventory.");
         }
+
     }
 
     // ------Adds a new item to the inventory----------
@@ -149,6 +151,7 @@ public class GameController {
             updateInventoryView();
         }
     }
+
 
 
     // ---- Get item descriptions ----
@@ -249,35 +252,14 @@ public class GameController {
 
         ItemModel reward = puzzle.getReward();
 
-        // Re-solve if you lost the reward + Bring you back home once you solve all puzzles!
+        // Re-solve if you lost the reward
         if (puzzle.attemptSolve(answer)) {
             if (!hasItem(reward.getName())) {
                 pickupItem(reward, false);
                 JOptionPane.showMessageDialog(null, "Correct! You received: " + reward.getName());
-
-                // Check if current room is the final one (Exit Room)
-                if (getCurrentRoom().getId() == 10) {
-                    JOptionPane.showMessageDialog(null, "🎉 You escaped!");
-
-                    // Optional: reset game state
-                    inventory.clear();
-                    currentRoomIndex = 0;
-
-                    // Close game and return to Start screen
-                    mainUI.dispose();
-                    startUI = new StartView(this);
-                    startUI.setVisible(true);
-                }
             } else {
                 JOptionPane.showMessageDialog(null, "Correct! You've already received this item.");
-
-                // Edge case: re-show win screen if revisiting Room 10
-                if (getCurrentRoom().getId() == 10) {
-                    JOptionPane.showMessageDialog(null, "🎉 You escaped!");
-                    mainUI.dispose();
-                    startUI = new StartView(this);
-                    startUI.setVisible(true);
-                }
+              
             }
         } else {
             JOptionPane.showMessageDialog(null, "Incorrect answer. Try again!");
