@@ -18,10 +18,10 @@ public class StartView extends JFrame {
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(15, 15, 15, 15);
-
-        // Title Label
         gbc.gridx = 0;
         gbc.gridy = 0;
+
+        // Title Label
         JLabel title = new JLabel("Adventure Game");
         title.setFont(new Font("Arial", Font.BOLD, 24));
         add(title, gbc);
@@ -34,6 +34,12 @@ public class StartView extends JFrame {
             controller.launchGame(); // Move to GameView
         });
         add(startBtn, gbc);
+
+        // Instructions Button
+        gbc.gridy++;
+        JButton instructionsBtn = new JButton("Instructions");
+        instructionsBtn.addActionListener(e -> showInstructions());
+        add(instructionsBtn, gbc);
 
         // About Button
         gbc.gridy++;
@@ -53,5 +59,27 @@ public class StartView extends JFrame {
         add(quitBtn, gbc);
 
         setVisible(true);
+    }
+
+    private void showInstructions() {
+        String message = """
+              HOW TO PLAY
+
+            • You will explore a series of rooms.
+            • Each room contains a riddle. Solve it to collect an item!
+            • Use the input box to type your answer, then press Enter.
+            • Use 'Next' and 'Back' to navigate between rooms.
+            • Some rooms require items to unlock.
+            • Your goal is to reach the Exit Room and solve the final riddle.
+
+            Good luck!
+            """;
+
+        JOptionPane.showMessageDialog(
+                this,
+                message,
+                "Instructions",
+                JOptionPane.INFORMATION_MESSAGE
+        );
     }
 }

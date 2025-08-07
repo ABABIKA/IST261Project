@@ -107,6 +107,7 @@ public class GameController {
         }
 
         updateInventoryView();
+
     }
 
     // Default version stays the same
@@ -132,6 +133,7 @@ public class GameController {
             if (inventoryUI != null)
                 inventoryUI.showMessage("That item isn't in your inventory.");
         }
+
     }
 
     // ------Adds a new item to the inventory----------
@@ -149,6 +151,7 @@ public class GameController {
             updateInventoryView();
         }
     }
+
 
 
     // ---- Get item descriptions ----
@@ -256,6 +259,7 @@ public class GameController {
                 JOptionPane.showMessageDialog(null, "Correct! You received: " + reward.getName());
             } else {
                 JOptionPane.showMessageDialog(null, "Correct! You've already received this item.");
+              
             }
         } else {
             JOptionPane.showMessageDialog(null, "Incorrect answer. Try again!");

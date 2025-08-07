@@ -58,8 +58,62 @@ public class RoomBuilderModel {
         room4.setPuzzle(puzzle4);
         rooms.add(room4);
 
+
+// Room 5 - Basement
+        RoomModel room5 = new RoomModel("Basement", "A cold, damp basement with flickering lights and distant echoes.", 5);
+        ItemModel reward5 = new ItemModel("Worn Tape", "An old cassette tape labeled 'Do Not Listen'.", true);
+        PuzzleModel puzzle5 = new PuzzleModel("riddle_5", "I’m tall when I’m young and short when I’m old. What am I?", "Candle", reward5);
+        room5.setPuzzle(puzzle5);
+        rooms.add(room5);
+
+// Room 6 - Control Room
+        RoomModel room6 = new RoomModel("Control Room", "Panels and blinking lights line the walls. A monitor displays static.", 6);
+        ItemModel reward6 = new ItemModel("Override Chip", "A glowing chip labeled 'Emergency Access'.", true);
+        PuzzleModel puzzle6 = new PuzzleModel("riddle_6", "I speak without a mouth and hear without ears. What am I?", "Echo", reward6);
+        room6.setPuzzle(puzzle6);
+        rooms.add(room6);
+
+// Room 7 - The Vault
+        RoomModel room7 = new RoomModel("Vault", "A heavy metal door stands sealed. The air is tense with silence.", 7);
+        ItemModel reward7 = new ItemModel("Encrypted Scroll", "A scroll with symbols that shift when touched.", true);
+        PuzzleModel puzzle7 = new PuzzleModel("riddle_7", "What has keys but can’t open locks?", "Piano", reward7);
+        room7.setPuzzle(puzzle7);
+        rooms.add(room7);
+
+// Room 8 - Forgotten Study
+        RoomModel room8 = new RoomModel("Forgotten Study", "Bookshelves tower to the ceiling. Dust swirls in the beam of a broken lamp.", 8);
+        ItemModel reward8 = new ItemModel("Old Journal", "A cracked leather journal filled with scribbled entries.", true);
+        PuzzleModel puzzle8 = new PuzzleModel("riddle_8", "What comes once in a minute, twice in a moment, but never in a thousand years?", "M", reward8);
+        room8.setPuzzle(puzzle8);
+        rooms.add(room8);
+
+ // Room 9 - Medical Bay
+        RoomModel room9 = new RoomModel("Medical Bay", "Sterile walls and old equipment remain. A faint mechanical hum can be heard.", 9);
+        ItemModel reward9 = new ItemModel("Serum Vial", "A glowing vial with unreadable markings.", true);
+        PuzzleModel puzzle9 = new PuzzleModel("riddle_9", "What can run but never walks, has a bed but never sleeps?", "River", reward9);
+        room9.setPuzzle(puzzle9);
+        rooms.add(room9);
+
+ // Room 10 - The exit!
+        RoomModel room10 = new RoomModel(
+                "Exit Room",
+                "A glowing panel awaits your final input. The air feels charged with anticipation.",
+                10
+        );
+        ItemModel reward10 = new ItemModel(
+                "Exit Code",
+                "The final code that unlocks your way out.",
+                true
+        );
+        PuzzleModel puzzle10 = new PuzzleModel(
+                "riddle_10",
+                "I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?",
+                "Map",
+                reward10
+        );
+        room10.setPuzzle(puzzle10);
+        rooms.add(room10);
+
         return rooms;
-
-
     }
 }
